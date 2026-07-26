@@ -83,7 +83,90 @@
           }
     
     button:hover{
-      transform:scale(1.05);\n}\n\n.card{\ndisplay:none;\nbackground:rgba(255,255,255,.15);\nbackdrop-filter:blur(12px);\npadding:35px;\nborder-radius:20px;\nmargin-top:40px;\nline-height:1.9;\nfont-size:20px;\n}\n\niframe{\nmargin-top:30px;\nwidth:100%;\nheight:500px;\nborder:none;\nborder-radius:20px;\n}\n\n.footer{\nmargin:50px 0;\nfont-size:28px;\nfont-family:'Great Vibes',cursive;\n}\n</style>\n</head>\n<body>\n\n<div class="hearts" id="hearts"></div>\n\n<div class="container">\n\n<div class="heart">❤️</div>\n\n<h1>My Dear Wife<br>I Love You!</h1>\n\n<h2>A little surprise made especially for the love of my life.</h2>\n\n<button onclick="openLove()">❤️ Open My Heart ❤️</button>\n\n<div class="card" id="loveCard">\n\n<h1>My Dearest Wife ❤️</h1>\n\n<p id="message"></p>\n\n<button onclick="playVideo()">🎥 Watch Our Special Video</button>\n\n<div id="video"></div>\n\n<div class="footer">\n❤️ I Love You Today, Tomorrow & Forever ❤️\n</div>\n\n</div>\n\n</div>\n\n<script>\nconst text=`Every day with you is the most beautiful chapter of my life.\n\nYour smile fills my heart with happiness, your love gives me strength, and your presence makes every moment special.\n\nThank you for standing beside me through every joy and every challenge.\n\nYou are not only my wife, but also my best friend, my greatest blessing, and the love of my life.\n\nNo matter what happens, I promise to love you, respect you, support you, and choose you every single day.\n\nI love you more than words can ever express.\n\nForever Yours ❤️`;\n\nfunction openLove(){\nconfetti({particleCount:250,spread:180});\ndocument.getElementById('loveCard').style.display='block';\nlet i=0;\nlet speed=35;\nlet msg=document.getElementById('message');\nmsg.innerHTML='';\nlet timer=setInterval(()=>{\nmsg.innerHTML+=text.charAt(i).replace('\n','<br>');\ni++;\nif(i>=text.length)clearInterval(timer);\n},speed);\n}\n\nfunction playVideo(){\nconfetti({particleCount:300,spread:180});\ndocument.getElementById('video').innerHTML=`\n<iframe src=\"https://www.youtube.com/embed/BqRyXz0vO0k?autoplay=1\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>`;\n}\n\nfor(let i=0;i<40;i++){\nlet s=document.createElement('span');\ns.innerHTML='❤️';\ns.style.left=Math.random()*100+'%';\ns.style.animationDuration=(5+Math.random()*8)+'s';\ns.style.fontSize=(15+Math.random()*35)+'px';\ns.style.animationDelay=Math.random()*8+'s';\ndocument.getElementById('hearts').appendChild(s);\n}\n</script>\n\n</body>\n</html>"}
+      transform:scale(1.05);
+    }
+    
+    .card{
+      display:none;
+      background:rgba(255,255,255,.15);
+      backdrop-filter:blur(12px);
+      padding:35px;
+      border-radius:20px;
+      margin-top:40px;
+      line-height:1.9;
+      font-size:20px;
+    }
+    
+    iframe{
+      margin-top:30px;
+      width:100%;
+      height:500px;
+      border:none;
+      border-radius:20px;
+    }
+    
+    .footer{
+      margin:50px 0;
+      font-size:28px;
+      font-family:'Great Vibes',cursive;
+    }
+  
+  </style>
+    
+    </head>
+  <body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container"><div class="heart">❤️</div>
+      <h1>My Dear Wife
+        <br>I Love You!</h1>
+      <h2>A little surprise made especially for the love of my life.</h2>
+      <button onclick="openLove()">❤️ Open My Heart ❤️</button>
+      <div class="card" id="loveCard">
+        <h1>My Dearest Wife ❤️</h1>
+        <p id="message"></p><button onclick="playVideo()">🎥 Watch Our Special Video</button>
+        <div id="video"></div>
+        <div class="footer">❤️ I Love You Today, Tomorrow & Forever ❤️</div>
+      </div>
+    </div>
+    <script>
+      const text=`Every day with you is the most beautiful chapter of my life.
+      Your smile fills my heart with happiness, your love gives me strength, and your presence makes every moment special.
+      Thank you for standing beside me through every joy and every challenge.
+      You are not only my wife, but also my best friend, my greatest blessing, and the love of my life.
+      No matter what happens, I promise to love you, respect you, support you, and choose you every single day.
+      I love you more than words can ever express.
+      Forever Yours ❤️`;
+      
+      function openLove(){
+        confetti({particleCount:250,spread:180});
+        document.getElementById('loveCard').style.display='block';
+        let i=0;
+        let speed=35;
+        let msg=document.getElementById('message');
+        msg.innerHTML='';
+        let timer=setInterval(()=>{
+          msg.innerHTML+=text.charAt(i).replace('\n','<br>');
+          i++;
+          if(i>=text.length)clearInterval(timer);
+        },speed);
+      }
+      
+      function playVideo(){
+        confetti({particleCount:300,spread:180});
+        document.getElementById('video').innerHTML=`<iframe src=\"https://www.youtube.com/embed/BqRyXz0vO0k?autoplay=1\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>`;}
+      for(let i=0;i<40;i++){
+        let s=document.createElement('span');
+        s.innerHTML='❤️';
+        s.style.left=Math.random()*100+'%';
+        s.style.animationDuration=(5+Math.random()*8)+'s';
+        s.style.fontSize=(15+Math.random()*35)+'px';
+        s.style.animationDelay=Math.random()*8+'s';
+        document.getElementById('hearts').appendChild(s);
+      }
+    </script>
+  </body>
+</html>"
+}
 
 
 
